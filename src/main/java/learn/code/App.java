@@ -4,7 +4,11 @@
 package learn.code;
 
 public class App {
-    public String getGreeting() {
+    /**
+     * Project entry point.
+     * @return String with Hello World
+     */
+    public final String getGreeting() {
         return "Hello World!";
     }
 
