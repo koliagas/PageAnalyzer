@@ -4,7 +4,7 @@
 package learn.code;
 
 public class App {
-    public String getGreeting() {
+    public final String getGreeting() {
         return "Hello World!";
     }
 
