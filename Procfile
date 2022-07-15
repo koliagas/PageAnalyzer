@@ -1,1 +1,1 @@
-web: java -jar sh build/libs/PageAnalyzer.jar
+web: java -jar sh build/install/PageAnalyzer/bin/PageAnalyzer
