@@ -8,3 +8,5 @@ lint: #Проверка кода на сооответствие стандар�
 	./gradlew checkstyleMain
 build: #сборка проекта
 	./gradlew clean build
+clean: #удаление билда
+	./gradlew clean
