@@ -70,7 +70,7 @@ checkstyle {
 
 task generateMigrations(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'io.hexlet.blog.MigrationGenerator'
+    mainClass = 'learn.code.MigrationGenerator'
 }
 
 task stage(dependsOn: ['clean', 'installDist'])
