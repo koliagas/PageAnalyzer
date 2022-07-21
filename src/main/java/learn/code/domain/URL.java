@@ -1,5 +1,6 @@
 package learn.code.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.Instant;
@@ -10,13 +11,11 @@ public class URL {
     @Id
     private long id;
 
-    private String name;
+    @Column(unique = true)
+    String name;
 
     @WhenCreated
     private Instant createdAt;
-
-//    public URL() {
-//    }
 
     public URL(String name) {
         this.name = name;
@@ -27,7 +26,7 @@ public class URL {
     * @return id of URL
     * */
     public long getId() {
-        return this.id;
+        return id;
     }
 
     /**
@@ -35,7 +34,7 @@ public class URL {
      * @return name of URL
      * */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
@@ -43,7 +42,7 @@ public class URL {
      * @return the creation date of URL
      * */
     public Instant getCreatedAt() {
-        return this.createdAt;
+        return createdAt;
     }
 
 
