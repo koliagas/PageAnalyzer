@@ -43,18 +43,7 @@ public final class App {
 
     private static void addRoutes(Javalin app) {
         app.get("/", RootController.welcome);
-//        app.get("/about", RootController.about);
-
-//        app.routes(() -> {
-//            path("articles", () -> {
-//                get(ArticleController.listArticles);
-//                post(ArticleController.createArticle);
-//                get("new", ArticleController.newArticle);
-//                path("{id}", () -> {
-//                    get(ArticleController.showArticle);
-//                });
-//            });
-//        });
+        app.get("/urls", RootController.urls);
     }
 
     public static Javalin getApp() {
