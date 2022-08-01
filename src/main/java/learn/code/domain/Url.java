@@ -1,13 +1,15 @@
 package learn.code.domain;
 
+import io.ebean.Model;
+import io.ebean.annotation.WhenCreated;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.Instant;
-import io.ebean.annotation.WhenCreated;
 
 @Entity
-public class URL {
+public class Url extends Model {
     @Id
     private long id;
 
@@ -17,7 +19,7 @@ public class URL {
     @WhenCreated
     private Instant createdAt;
 
-    public URL(String name) {
+    public Url(String name) {
         this.name = name;
     }
 
