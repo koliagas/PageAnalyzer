@@ -6,12 +6,18 @@ package learn.code;
 import io.javalin.Javalin;
 import io.javalin.plugin.rendering.template.JavalinThymeleaf;
 
+
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 
 import learn.code.controllers.RootController;
+import learn.code.controllers.UrlController;
+
+import static io.javalin.apibuilder.ApiBuilder.path;
+import static io.javalin.apibuilder.ApiBuilder.post;
+import static javax.swing.UIManager.get;
 
 public final class App {
 
@@ -43,7 +49,16 @@ public final class App {
 
     private static void addRoutes(Javalin app) {
         app.get("/", RootController.welcome);
-        app.get("/urls", RootController.urls);
+
+        app.routes(() -> {
+            path("urls", () -> {
+                get(UrlController.listUrls);
+                post(UrlController.createUrl);
+                path("{id}", () -> {
+                    get(UrlController.showUrl);
+                });
+            });
+        });
     }
 
     public static Javalin getApp() {
