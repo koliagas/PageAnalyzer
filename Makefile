@@ -10,3 +10,5 @@ build: #сборка проекта
 	./gradlew clean build
 clean: #удаление билда
 	./gradlew clean
+start: #запуск с бд
+	APP_ENV=development ./gradlew run
